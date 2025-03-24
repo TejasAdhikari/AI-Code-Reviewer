@@ -13,13 +13,13 @@ def save_review(code, feedback):
         encoded_password = urllib.parse.quote_plus(parsed.password)
         safe_url = f"postgresql://{parsed.username}:{encoded_password}@{parsed.hostname}:{parsed.port}/{parsed.path[1:]}"
         
-        print(f"Attempting connection with parsed URL...")
+        print(f"Attempting connection with parsed URL.")
         conn = psycopg2.connect(safe_url)
         print("Connected to the database.")
         
         cur = conn.cursor()
         
-        print("Inserting data into code_reviews table...")
+        print("Inserting data into code_reviews table.")
         cur.execute(
             "INSERT INTO code_reviews (code, feedback) VALUES (%s, %s)",
             (code, feedback)

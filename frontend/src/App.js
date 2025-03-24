@@ -4,6 +4,8 @@ import Editor from "@monaco-editor/react";
 import { Spinner } from 'react-bootstrap';
 
 
+const API_URL = process.env.BACKEND_API_URL || "http://127.0.0.1:5000";
+
 function App() {
   const [code, setCode] = useState("// Write your code here");
   const [feedback, setFeedback] = useState("");
@@ -12,7 +14,7 @@ function App() {
   const analyzeCode = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/analyze", { code });
+      const response = await axios.post(`${API_URL}/analyze`, { code });
       setFeedback(response.data.feedback);
     } catch (error) {
       setFeedback("An error occurred while analyzing the code.");
