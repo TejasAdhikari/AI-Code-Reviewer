@@ -1,8 +1,7 @@
 from urllib import response
 from google import genai
-import psycopg2
-from flask import Flask, request, jsonify
-from config import DATABASE_URL, GEMINI_API_KEY
+from flask import jsonify
+from config import GEMINI_API_KEY
 
 
 # Initialize the gemini genai client
