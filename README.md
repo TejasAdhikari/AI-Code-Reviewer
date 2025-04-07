@@ -102,7 +102,6 @@ MIT License - see [LICENSE.md](LICENSE.md)
 ## 📞 Support
 
 - Create GitHub issue
-- Email: support@aicodereview.com
 - Documentation: [docs/](docs/)
 
 ## ✅ Environment Variables
